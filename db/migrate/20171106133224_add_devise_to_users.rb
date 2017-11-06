@@ -4,5 +4,5 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
 
     end
   end
-
+# hello remi
 end
