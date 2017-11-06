@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_destination, only: [:show, :edit, :update, :destroy]
   def index
     @destination = Destination.all
   end
@@ -7,6 +7,9 @@ class DestinationsController < ApplicationController
   def show
 
   end
+  def edit
+  end
+
 
   def new
     @destination = Destination.new
@@ -17,15 +20,15 @@ class DestinationsController < ApplicationController
      @destination.save
 
     # no need for app/views/restaurants/create.html.erb
-    redirect_to restaurant_path(@restaurant)
+    redirect_to destination_path(@destination)
   end
 
   def update
     @destination = Destination.find(params[:id])
-    @destination.update(restaurant_params)
+    @destination.update(destination_params)
 
     # no need for app/views/restaurants/update.html.erb
-    redirect_to destination_path(@restaurant)
+    redirect_to destination_path(@destination)
   end
 
   private
