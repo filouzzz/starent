@@ -16,18 +16,19 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @destination = Destination.new(destination_params)
-    @destination.save
+     @destination = Destination.new(destination_params)
+     @destination.save
+
+    # no need for app/views/restaurants/create.html.erb
     redirect_to destination_path(@destination)
   end
 
   def update
+    @destination = Destination.find(params[:id])
     @destination.update(destination_params)
-    redirect_to destination_path(@destination)
-  end
 
-  def destroy
-    @destination.delete(destination_params)
+    # no need for app/views/restaurants/update.html.erb
+    redirect_to destination_path(@destination)
   end
 
   private
