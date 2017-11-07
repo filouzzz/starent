@@ -17,7 +17,9 @@ class DestinationsController < ApplicationController
   end
 
   def create
-     @destination = Destination.new(destination_params)
+    user_id = rand(1..3)
+     @destination = Destination.new(destination_params,)
+     @destination.user_id = user_id
      @destination.save
 
     # no need for app/views/destinations/create.html.erb
