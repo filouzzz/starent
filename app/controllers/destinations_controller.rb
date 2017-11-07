@@ -20,22 +20,21 @@ class DestinationsController < ApplicationController
      @destination = Destination.new(destination_params)
      @destination.save
 
-    # no need for app/views/restaurants/create.html.erb
+    # no need for app/views/destinations/create.html.erb
     redirect_to destination_path(@destination)
   end
 
   def update
-    @destination = Destination.find(params[:id])
     @destination.update(destination_params)
 
-    # no need for app/views/restaurants/update.html.erb
+    # no need for app/views/destinations/update.html.erb
     redirect_to destination_path(@destination)
   end
 
   private
 
   def set_destination
-    @restaurant = Destination.find(params[:id])
+    @destination = Destination.find(params[:id])
   end
   def destination_params
     params.require(:destination).permit(:name, :distance)
