@@ -40,4 +40,4 @@ class DestinationsController < ApplicationController
     params.require(:destination).permit(:name, :distance)
   end
 end
-end
+
