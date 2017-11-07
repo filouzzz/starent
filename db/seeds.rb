@@ -16,6 +16,6 @@ Destination.destroy_all
 puts "Adding 7 Destinations "
 name_to_sample.each do |planet_name|
   destination = Destination.new(name: planet_name, planet_type: type_to_sample.sample, distance: distance_to_randomize.sample, price: price_to_randomize.sample )
-  destination.save
+  destination.save!
 puts "destination created #{destination.name }"
 end

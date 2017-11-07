@@ -1,7 +1,8 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
+
   def index
-    @destination = Destination.all
+    @destinations = Destination.all
   end
 
   def show
@@ -39,5 +40,4 @@ class DestinationsController < ApplicationController
   def destination_params
     params.require(:destination).permit(:name, :distance)
   end
-end
 end
