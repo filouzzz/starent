@@ -3,14 +3,23 @@
     <div class="col-xs-12 col-sm-8 col-md-4">
       <div class="form-inputs" >
         <h2>Sign up</h2>
-        <%= simple_form_for @user do |f| %>
-        <%= f.input :first_name, :label => 'Your first_name please' %>
-        <%= f.input :last_name, :label => 'Your last_name please' %>
-        <%= f.input :encrypted_password, :hint => 'No special characters.' %>
-        <%= f.input :remember_me, :as => :boolean %>
-        <%= f.button :submit %>
-        <% end %>
+        <%= simple_form_for @user, url: user_registration_path do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs" style="padding-left:15%; text-align:left;">
+          <%= f.input :first_name, :label => 'Your first_name please', required: true, autofocus: true %>
+          <%= f.input :last_name, :label => 'Your last_name please', required: true, autofocus: true %>
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, :hint => 'No special characters.', required: true %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+        <div class="form-actions" style="padding-left:15%; padding-top:5%; text-align:left;">
+          <%= f.button :submit, "Register" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
