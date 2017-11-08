@@ -27,7 +27,7 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    user_id = rand(1..3)
+    user_id = current_user
      @destination = Destination.new(destination_params,)
      @destination.user_id = user_id
      @destination.save
