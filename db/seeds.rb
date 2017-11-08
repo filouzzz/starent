@@ -28,7 +28,7 @@ puts "Seeding Destinations"
 puts "Adding 7 Destinations "
 images = ["a","b","c","d","e", "f"]
 name_to_sample.each_with_index do |planet_name, index|
-  destination = Destination.new(name: planet_name, planet_type: type_to_sample.sample, distance: distance_to_randomize.sample, price: price_to_randomize.sample, created_at: Time.now, user_id: User.all.sample.id )
+  destination = Destination.new(name: planet_name, planet_type: type_to_sample.sample, distance: distance_to_randomize.sample, price: price_to_randomize.sample, created_at: Time.now, user_id: User.all.sample.id, booked: false  )
   destination.photo = images[index]
 
   destination.save!
