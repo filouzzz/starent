@@ -12,8 +12,7 @@ end
 def show
 end
 
-<<<<<<< HEAD
-=======
+
 def destination_booked
   @destination.booked = true
 end
@@ -23,7 +22,6 @@ def display_unbooked_destinations
 end
 
 
->>>>>>> c0a38e52b9945c24deb2481d3f0d61f64910a9e4
 def edit
 end
 
