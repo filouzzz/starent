@@ -5,9 +5,13 @@ class DestinationsController < ApplicationController
     @destinations = Destination.all
   end
 
-  def show
-
+  def new
+    @destination = Destination.find(params[set_destination])
   end
+
+  def show
+  end
+
   def edit
   end
 
@@ -18,17 +22,20 @@ class DestinationsController < ApplicationController
 
   def create
      @destination = Destination.new(destination_params)
-     @destination.save
-
-    # no need for app/views/destinations/create.html.erb
-    redirect_to destination_path(@destination)
+    if @destination.save
+      redirect_to destination_path
+    else
+      render :new
+    end
   end
 
   def update
-    @destination.update(destination_params)
-
-    # no need for app/views/destinations/update.html.erb
-    redirect_to destination_path(@destination)
+   respond_to do |format|
+    if @destination.update(destination_params)
+      redirect_to @destination
+    else
+      render :edit
+    end
   end
 
   private
@@ -37,6 +44,8 @@ class DestinationsController < ApplicationController
     @destination = Destination.find(params[:id])
   end
   def destination_params
-    params.require(:destination).permit(:name, :distance)
+    params.require(:destination).permit(:name, :distance, :planet_type, :price, :weather)
   end
+  end
+
 end

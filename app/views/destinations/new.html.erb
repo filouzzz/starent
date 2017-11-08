@@ -1,0 +1,22 @@
+<div class="bg-form">
+<div class="container ">
+  <div class="row">
+    <div class="text-center">
+      <h2 class="new-destination-header"> NEW DESTINATION</h2>
+    <div class="form-spacing">
+      <div class="col-md-4 col-md-offset-4">
+        <%= simple_form_for [@destination] do |f| %>
+        <%= f.input :name, placeholder: 'name', label: false %>
+        <%= f.input :planet_type, placeholder: 'planet type', label: false%>
+        <%= f.input :price, class: "color-white-form", label: false %>
+        <%= f.input :weather, placeholder: 'weather', label: false %>
+        <%= f.input :photo, label: false %>
+        <%= f.input :description, placeholder: 'description', label: false %>
+        <%= f.submit "new space", class: "btn btn-primary rounded-white" %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
