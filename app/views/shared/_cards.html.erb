@@ -11,17 +11,17 @@
         <h2><%= destination.name %></h2>
         <p><%= destination.planet_type %></p>
       </div>
-      <div class="card-buttons">
+      <div class="card-buttons-left">
         <p><%=  link_to 'Show destination', destination_path(destination), class: "btn btn-red-small"%></p>
       </div>
       <% if destination.booked do %>
-      <div class="card-buttons">
+      <div class="card-buttons-right">
         <p>Already Booked</p>
       </div>
       <% end %>
       <% else  %>
-      <div class="card-buttons">
-        <p>Book Me</p>
+      <div class="card-buttons-right">
+        <p><%= link_to 'Book Destination', new_destination_booking_path(destination),class: "btn btn-red-small" %></p>
       </div>
 
       <% end %>

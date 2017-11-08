@@ -1,3 +1,4 @@
+
 <div class = "container">
 <div class="card margin-bottom-10" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path @destination.photo %>);">
 <h1 class="text-center"><%= @destination.name%></h1><h4 class="text-center"> a <%= @destination.planet_type %></h4>
@@ -6,6 +7,9 @@
 <ul>
   <li><h3 class="text-center">Price: <%= @destination.price %></h3></li>
   <li><h3 class="text-center">weather description :<%= @destination.weather%></h3></li>
+  <li><%= link_to 'Back', destinations_path %></li>
 </ul>
 </div>
+
 </div>
+

@@ -3,34 +3,36 @@ class DestinationsController < ApplicationController
 
   def index
    @destinations = Destination.all
-  end
+ end
 
-  def show
+ def show
 
-  end
+ end
 
-  def destination_booked
-    @destination.booked = true
-  end
+ def destination_booked
+  @destination.booked = !@destination.booked
+  @destination.save
 
-  def display_unbooked_destinations
-    @destinations = Destination.where(booked: false)
-  end
+end
 
-
-  def edit
-  end
+def display_unbooked_destinations
+  @destinations = Destination.where(booked: false)
+end
 
 
-  def new
-    @destination = Destination.new
-  end
+def edit
+end
 
-  def create
-    user_id = current_user
-     @destination = Destination.new(destination_params,)
-     @destination.user_id = user_id
-     @destination.save
+
+def new
+  @destination = Destination.new
+end
+
+def create
+ user_id = current_user
+ @destination = Destination.new(destination_params)
+ @destination.user_id = user_id
+ @destination.save
 
     # no need for app/views/destinations/create.html.erb
     redirect_to destination_path(@destination)

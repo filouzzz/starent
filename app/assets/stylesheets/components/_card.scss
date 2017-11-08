@@ -57,8 +57,14 @@
 }
 
 
-.card-buttons {
-    position: absolute;
+.card-buttons-left {
+  position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 3px;
+}
+
+.card-buttons-right {
+  position: absolute;
+  bottom: 10px;
+  right: 3px;
 }
