@@ -10,12 +10,13 @@
         <div class="card-description">
           <h2><%= destination.name %></h2>
           <p><%= destination.planet_type %></p>
+          <p> Price :<%= destination.price %></p>
         </div>
         <div class="card-buttons">
           <p><%=  link_to 'Show destination', destination_path(destination), class: "btn btn-red-small"%></p>
         </div>
         <!-- correct -->
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
+
       </div>
     </div>
     <% end %>
