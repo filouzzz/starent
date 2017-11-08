@@ -7,7 +7,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
-
+gem 'webpacker', '~> 3.0'
 
 gem 'faker'
 gem 'autoprefixer-rails'
