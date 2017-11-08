@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
-# TESTZZZZZZZZZZZ
+
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -21,8 +21,6 @@ gem 'devise'
 gem 'cloudinary'
 
 gem 'rails_12factor', group: :production
-
-
 
 group :development, :test do
   gem 'pry-byebug'
