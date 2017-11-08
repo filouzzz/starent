@@ -5,6 +5,13 @@ class DestinationsController < ApplicationController
    @destinations = Destination.all
  end
 
+
+ def show
+
+ end
+
+
+
  def new
   @destination = Destination.find(params[set_destination])
 end
@@ -13,8 +20,7 @@ def show
 end
 
 
-def destination_booked
-  @destination.booked = true
+
 end
 
 def display_unbooked_destinations
@@ -29,6 +35,7 @@ end
 def new
   @destination = Destination.new
 end
+
 
 def create
  user_id = current_user
