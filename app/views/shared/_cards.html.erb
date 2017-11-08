@@ -5,20 +5,33 @@
   </div>
   <div class="row">
     <% @destinations.each do |destination| %>
-    <div class="col-xs-6 col-sm-6 col-md-4 ">
- <div class="card margin-bottom-10" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
-        <div class="card-description">
-          <h2><%= destination.name %></h2>
-          <p><%= destination.planet_type %></p>
-        </div>
-        <div class="card-buttons">
-          <p><%=  link_to 'Show destination', destination_path(destination), class: "btn btn-red-small"%></p>
-        </div>
-        <!-- correct -->
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+     <div class="card margin-bottom-10" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
+      <div class="card-description">
+        <h2><%= destination.name %></h2>
+        <p><%= destination.planet_type %></p>
       </div>
+      <div class="card-buttons">
+        <p><%=  link_to 'Show destination', destination_path(destination), class: "btn btn-red-small"%></p>
+      </div>
+      <% if destination.booked do %>
+      <div class="card-buttons">
+        <p>Already Booked</p>
+      </div>
+      <% end %>
+      <% else  %>
+      <div class="card-buttons">
+        <p>Book Me</p>
+      </div>
+
+      <% end %>
+
+      <!-- correct -->
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
     </div>
-    <% end %>
   </div>
+  <% end %>
 </div>
+</div>
+
 
