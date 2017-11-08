@@ -1,13 +1,23 @@
 class DestinationsController < ApplicationController
-  before_action :set_destination, only: [:show, :edit, :update, :destroy]
+  before_action :set_destination, only: [:destination_booked,:show, :edit, :update, :destroy]
 
   def index
-    @destinations = Destination.all
+   @destinations = Destination.all
   end
 
   def show
 
   end
+
+  def destination_booked
+    @destination.booked = true
+  end
+
+  def display_unbooked_destinations
+    @destinations = Destination.where(booked: false)
+  end
+
+
   def edit
   end
 
@@ -17,7 +27,9 @@ class DestinationsController < ApplicationController
   end
 
   def create
-     @destination = Destination.new(destination_params)
+    user_id = current_user
+     @destination = Destination.new(destination_params,)
+     @destination.user_id = user_id
      @destination.save
 
     # no need for app/views/destinations/create.html.erb
