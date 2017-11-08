@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.5p376'
+ruby '2.3.5'
 # TESTZZZZZZZZZZZ
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
@@ -19,6 +19,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'cloudinary'
+
+gem 'rails_12factor', group: :production
+
+
 
 group :development, :test do
   gem 'pry-byebug'
