@@ -19,14 +19,14 @@ end
 
 
 #Creating 7 fake planet to db.
-type_to_sample = ["moon","planet"]
-name_to_sample = ["Earth","Neptune", "Mercure", "Mars", "Saturne", "Venus"]
+type_to_sample = ["moon","planet", "asteroid", "comet", "stars"]
+name_to_sample = ["Earth","Neptune", "Mercure", "Mars", "Saturne", "Venus", "Gliese 676 Ac", "Kepler-20g", "Proxima Centauri", "XO-6b", "51 Pegasi", "55 Cancri", "70 Virginis", "Upsilons", "Andromedae" ]
 distance_to_randomize = (100000..50000000).to_a
 price_to_randomize = (500..10000).to_a
 
 puts "Seeding Destinations"
-puts "Adding 7 Destinations "
-images = ["a","b","c","d","e", "f"]
+puts "Adding 15 Destinations "
+images = ["a","b","c","d","e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o"]
 name_to_sample.each_with_index do |planet_name, index|
   destination = Destination.new(name: planet_name, planet_type: type_to_sample.sample, distance: distance_to_randomize.sample, price: price_to_randomize.sample, created_at: Time.now, user_id: User.all.sample.id, booked: false  )
   destination.photo = images[index]

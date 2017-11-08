@@ -1,5 +1,5 @@
 class DestinationsController < ApplicationController
-  before_action :set_destination, only: [:show, :edit, :update, :destroy]
+  before_action :set_destination, only: [:destination_booked,:show, :edit, :update, :destroy]
 
   def index
    @destinations = Destination.all
@@ -8,6 +8,16 @@ class DestinationsController < ApplicationController
   def show
 
   end
+
+  def destination_booked
+    @destination.booked = true
+  end
+
+  def display_unbooked_destinations
+    @destinations = Destination.where(booked: false)
+  end
+
+
   def edit
   end
 
