@@ -32,6 +32,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user_id: current_user)
+    @created_destination = Destination.where(user: current_user)
   end
 
 
