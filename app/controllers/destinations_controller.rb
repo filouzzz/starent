@@ -2,8 +2,16 @@ class DestinationsController < ApplicationController
   before_action :set_destination, only: [:destination_booked,:show, :edit, :update, :destroy]
 
   def index
-   @destinations = Destination.all
- end
+    @destinations = Destination.all
+    if params[:search]
+      if Destination.search(params[:search]).any?
+      @destinations = Destination.search(params[:search])
+      else
+        flash[:notice]= "result not matching"
+        render 'index'
+      end
+    end
+  end
 
  def show
 
@@ -15,7 +23,7 @@ class DestinationsController < ApplicationController
 
  def display_unbooked_destinations
   @destinations = Destination.where(booked: false)
-end
+ end
 
 
 def edit
