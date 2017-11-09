@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
   devise_for :users
 
   get '/desinations/display_unbooked_destinations', to: 'destinations#display_unbooked_destinations'

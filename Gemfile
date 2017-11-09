@@ -19,6 +19,13 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
 gem 'cloudinary'
+gem "attachinary"
+gem "jquery-fileupload-rails"
+gem "coffee-rails"
+
+gem "attachinary"
+gem "jquery-fileupload-rails"
+gem "coffee-rails"
 
 gem 'rails_12factor', group: :production
 
