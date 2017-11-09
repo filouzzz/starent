@@ -9,6 +9,7 @@
         <div class="form-inputs" style="padding-left:15%; text-align:left;">
           <%= f.input :first_name, :label => 'Your first_name please', required: true, autofocus: true %>
           <%= f.input :last_name, :label => 'Your last_name please', required: true, autofocus: true %>
+          <%= f.input :avatar, as: :attachinary %>
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, :hint => 'No special characters.', required: true %>
           <%= f.input :password_confirmation, required: true %>
