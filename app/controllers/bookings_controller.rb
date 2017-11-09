@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_destination, only:[:show, :create, :destroy]
+  before_action :set_destination, only:[:show, :new, :create, :destroy]
   before_action :set_booking ,only:[:show, :destroy]
   # before_action :set_user, only: [:index, :create]
 
@@ -9,9 +9,8 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @booking = Booking.new(booking_params)
-    @booking.user = User.all.sample
+    @booking.user = current_user
     @booking.destination = @destination
     if @booking.save
       @destination.booked = !@destination.booked
@@ -32,7 +31,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where(user: current_user)
+    @bookings = Booking.where(user_id: current_user)
   end
 
 
