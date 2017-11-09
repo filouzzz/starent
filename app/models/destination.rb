@@ -4,6 +4,6 @@ class Destination < ApplicationRecord
   validates :name, uniqueness: true, presence: true
 
   def self.search(search)
-    where("name ILIKE ? OR weather ILIKE ?", "%#{search}%", "%#{search}%")
+    where("name ILIKE ?","%#{search}%")
   end
 end
