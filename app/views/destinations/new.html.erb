@@ -9,8 +9,9 @@
         <%= simple_form_for [@destination] do |f| %>
         <%= f.input :name, placeholder: 'name', label: false %>
         <%= f.input :planet_type, placeholder: 'planet type', label: false%>
-        <%= f.input :price, class: "color-white-form", label: false %>
+        <%= f.input :price, class: "color-white-form",placeholder: 'price', label: false %>
         <%= f.input :weather, placeholder: 'weather', label: false %>
+        <%= f.input :distance, placeholder: 'disatnce', label: false %>
         <div class="file-upload-new-dest text-center">
         <%= f.file_field :photo, label: false %>
         </div>

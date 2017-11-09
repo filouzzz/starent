@@ -15,22 +15,6 @@ ActiveRecord::Schema.define(version: 20171109122409) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attachin_files", force: :cascade do |t|
-    t.string "attachinaria_type"
-    t.bigint "attachinaria_id"
-    t.string "scope"
-    t.string "public_id"
-    t.string "version"
-    t.integer "width"
-    t.integer "height"
-    t.string "format"
-    t.string "resource_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["attachinaria_type", "attachinaria_id", "scope"], name: "by_scoped_parent"
-    t.index ["attachinaria_type", "attachinaria_id"], name: "index_attachin_files_on_attachinaria_type_and_attachinaria_id"
-  end
-
   create_table "attachinary_files", force: :cascade do |t|
     t.string "attachinariable_type"
     t.bigint "attachinariable_id"

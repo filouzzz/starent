@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_destination
+  before_action :set_destination, only:[:show, :create, :destroy]
   before_action :set_booking ,only:[:show, :destroy]
   # before_action :set_user, only: [:index, :create]
 
@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = User.all.sample
     @booking.destination = @destination
-    if @booking.save!
+    if @booking.save
       @destination.booked = !@destination.booked
       @destination.save
       redirect_to destinations_path
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where(user: @user_id)
+    @bookings = Booking.where(user: current_user)
   end
 
 
