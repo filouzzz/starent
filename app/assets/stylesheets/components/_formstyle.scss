@@ -23,6 +23,28 @@ background-position: center;
   border-radius: 20px;
   color: black;
   font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.rounded-red {
+  background-color: #ff7885;
+  border-color: #ff7885;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+.rounded-red:hover {
+
+  border-color: #f7a6ae;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
 }
 
 .new-header-page {
@@ -50,4 +72,27 @@ min-height: 600px;
 
  .checkbox{
   color:white;
+}
+
+.rounded-password{
+  background-color: #f7a6ae;
+ border-color: #f7a6ae;
+  border-radius: 20px;
+  color: black;
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.rounded-password:hover{
+  background-color: #f7a6ae;
+ border-color: #f7a6ae;
+  border-radius: 20px;
+  color: black;
+  font-size: 12px;
+  margin-top: 30px;
+  padding: 7px;
+  text-decoration: none;
+
 }
