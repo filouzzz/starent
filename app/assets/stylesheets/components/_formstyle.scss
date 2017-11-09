@@ -1,7 +1,7 @@
 .form-spacing {
 padding: 50px;
 margin-bottom: 15px;
-min-height: 500px;
+height: 100vh;
 }
 
 .bg-form {
@@ -25,7 +25,7 @@ background-position: center;
   font-size: 15px;
 }
 
-.new-destination-header {
+.new-header-page {
 color: white;
 padding-top: 10px;
 }
@@ -37,4 +37,17 @@ padding-top: 10px;
 .file-upload-new-dest {
   height: 100px;
   padding:30px;
+}
+// background login page
+
+.form-login{
+  background-image:url("https://media.giphy.com/media/BHNfhgU63qrks/giphy.gif
+");
+background-size: cover;
+background-position: center;
+min-height: 600px;
+}
+
+ .checkbox{
+  color:white;
 }
