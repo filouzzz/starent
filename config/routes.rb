@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   get '/desinations/display_unbooked_destinations', to: 'destinations#display_unbooked_destinations'
-
+  get '/bookings/index', to: 'bookings#index'
   resources :destinations, only: [:create, :edit, :index, :destroy, :show, :new,] do
-    resources :bookings, only: [:index, :new, :create, :show]
+    resources :bookings, only: [:new, :create, :show]
   end
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

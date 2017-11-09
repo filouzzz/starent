@@ -35,17 +35,23 @@ def new
 end
 
 def create
- user_id = current_user
+
  @destination = Destination.new(destination_params)
- @destination.user_id = user_id
- @destination.save
+ @destination.user = current_user
+  # if @destination.name == Destination.where(name: @destination.name)
+  #   render :new
+  # else
 
-    # no need for app/views/destinations/create.html.erb
-    redirect_to destination_path(@destination)
-  end
+      if @destination.save
+        redirect_to destinations_path
+      else
+        render :new
+      end
 
-  def update
-    @destination.update(destination_params)
+end
+
+def update
+  @destination.update(destination_params)
 
     # no need for app/views/destinations/update.html.erb
     redirect_to destination_path(@destination)
@@ -57,7 +63,7 @@ def create
     @destination = Destination.find(params[:id])
   end
   def destination_params
-    params.require(:destination).permit(:name, :distance)
+    params.require(:destination).permit(:name, :price, :description, :planet_type, :weather, :photo, :distance)
   end
 end
 
