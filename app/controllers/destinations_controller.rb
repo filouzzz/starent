@@ -5,19 +5,15 @@ class DestinationsController < ApplicationController
    @destinations = Destination.all
  end
 
- def new
-  @destination = Destination.find(params[set_destination])
-end
+ def show
 
-def show
-end
+ end
 
+ # def destination_booked
+ #  @destination.booked = !@destination.booked
+ #  end
 
-def destination_booked
-  @destination.booked = true
-end
-
-def display_unbooked_destinations
+ def display_unbooked_destinations
   @destinations = Destination.where(booked: false)
 end
 
@@ -34,31 +30,26 @@ def create
  user_id = current_user
  @destination = Destination.new(destination_params)
  @destination.user_id = user_id
- if @destination.save
-  redirect_to destination_path
-else
-  render :new
-end
+ @destination.save
 
-end
+    # no need for app/views/destinations/create.html.erb
+    redirect_to destination_path(@destination)
+  end
 
-def update
- respond_to do |format|
-  if @destination.update(destination_params)
-    redirect_to @destination
-  else
-    render :edit
+  def update
+    @destination.update(destination_params)
+
+    # no need for app/views/destinations/update.html.erb
+    redirect_to destination_path(@destination)
+  end
+
+  private
+
+  def set_destination
+    @destination = Destination.find(params[:id])
+  end
+  def destination_params
+    params.require(:destination).permit(:name, :distance)
   end
 end
 
-private
-
-def set_destination
-  @destination = Destination.find(params[:id])
-end
-def destination_params
-  params.require(:destination).permit(:name, :distance, :planet_type, :price, :weather)
-end
-end
-
-end
