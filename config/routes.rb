@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/desinations/display_unbooked_destinations', to: 'destinations#display_unbooked_destinations'
   get '/bookings/index', to: 'bookings#index'
-  resources :destinations, only: [:create, :edit, :index, :destroy, :show, :new,] do
+  resources :destinations, only: [:create, :edit, :index, :destroy, :show, :new,:update] do
     resources :bookings, only: [:new, :create, :show]
   end
 end
