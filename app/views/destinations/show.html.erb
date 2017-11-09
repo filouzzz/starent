@@ -12,7 +12,15 @@
   <p>
   <%= link_to 'Back', destinations_path, class: "btn btn-primary"%>
   </p>
-
+  <p>
+    <%= link_to 'Book', new_destination_booking_path(@destination), class: "btn btn-primary"%>
+  </p>
+    <% if @destination.user == current_user %>
+      <p>
+      <%= likt_to 'Update destination', edit_destination_path(@destination), class: "btn btn-primary"  %>
+      </p>
+      <% else %>
+      <% end %>
   </div>
 
 </ul>
