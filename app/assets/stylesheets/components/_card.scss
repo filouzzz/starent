@@ -1,14 +1,31 @@
+
+.boxx{
+display: flex;
+}
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+
+
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  min-height: 200px;
   margin: 10px;
+  box-shadow: 0 1px 8px rgba(0,0,0,.1);
+  overflow: hidden;
+  -webkit-transition: translate .18s,box-shadow .18s;
+  transition: translate .18s,box-shadow .18s;
+  border-radius: 6px;
 }
 
+.card-img{
+min-height: 175px;
+width: 100%;
+    display: block;
+}
+.card-block{
+flex: 1 1 auto;
+    padding: 1.25rem;
+}
 .card-user {
   position: absolute;
   right: 10px;
@@ -57,6 +74,12 @@
   opacity: 0.1;
 }
 
+.link-cards{
+  color: white;
+}
+
+
+// .card-buttons {
 
 .card-buttons-left {
   position: absolute;
@@ -69,3 +92,24 @@
   bottom: 10px;
   right: 3px;
 }
+
+.card-text {
+    margin-bottom: 0;
+    color: black!important;
+}
+
+.card a {
+  color:white;
+  text-decoration:none!important;
+
+}
+
+.bookme{
+  color:rgba(45, 41, 185, 0.94);
+  font-weight: 400;
+}
+
+.bookme :hover{
+  text-decoration: none!important;
+}
+
