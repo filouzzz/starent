@@ -9,10 +9,11 @@
       <% @destinations.each do |destination| %>
 
       <div class="col-xs-12 col-sm-6 col-md-4 ">
-       <%= link_to "test" , destination_path(destination), class:" link-cards" %>
+       <%= link_to destination_path(destination), class:" link-cards" do %>
         <div class="card">
          <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
          </div>
+
          <div class="card-block">
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
 
@@ -25,13 +26,13 @@
             <p>Already booked</p>
           </div>
           <% end %>
-          <% else  %>
+          <% else %>
           <div class="card-text:last-child">
             <p class="bookme">Book me</p>
           </div>
 
           <% end %>
-
+          <% end %>
           <!-- correct -->
 
         </div>
