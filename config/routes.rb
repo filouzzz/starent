@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get '/desinations/display_unbooked_destinations', to: 'destinations#display_unbooked_destinations'
-  root to: 'destinations#index'
+  root to: 'pages#home'
 
   resources :destinations, only: [:create, :index, :destroy, :show, :new,] do
     resources :bookings, only: [:index, :new, :create, :show]
