@@ -1,7 +1,10 @@
+<%= form_tag(destinations_path, :method => "get", ) do %>
+<%= text_field_tag :search, params[:name], placeholder: "Search Destinations" %>
+<%= submit_tag "Search" %>
+
+<% end %>
 
 <%= render 'shared/cards' %>
-
-
 <div class="top-padding-100 text-center">
   <p><%= link_to 'New Destination', new_destination_path, class: "btn btn-primary"%></p>
   <p><%= link_to 'Display All Available Destinations',
