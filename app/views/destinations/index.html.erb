@@ -6,7 +6,11 @@
 
 <%= render 'shared/cards' %>
 <div class="top-padding-100 text-center">
+  <% if current_user %>
   <p><%= link_to 'New Destination', new_destination_path, class: "btn btn-primary"%></p>
-  <p><%= link_to 'Display All Available Destinations',
-  '/desinations/display_unbooked_destinations', class: "btn btn-primary" %></p>
+  <% else %>
+  <p>
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+  </p>
+  <% end %>
 </div>
