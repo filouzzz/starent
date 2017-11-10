@@ -4,13 +4,10 @@
     <h2>This is your booked Destinations all over the universe</h2>
   </div>
   <div class="row">
-
-
-      <% @bookings.each do |booking| %>
-
-      <div class="col-xs-12 col-sm-6 col-md-4 "
-        <div class="card">
-         <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path booking.destination.photo %>);">
+    <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+      <div class="card">
+       <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path booking.destination.photo %>);">
 
 
          <div class="card-block">
@@ -22,22 +19,21 @@
           </div>
           <div>
             <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
-            </div>
-            </div>
           </div>
-         </div>
-         <% end %>
-
-
-          <!-- correct -->
-
         </div>
       </div>
     </div>
-
-
+  </div>
+  <% end %>
 </div>
 </div>
+
+<!-- correct -->
+
+
+
+
+
 
 
 <div class="container ">
@@ -47,34 +43,31 @@
   <div class="row">
 
 
-      <% @created_destination.each do |destination| %>
+    <% @created_destination.each do |destination| %>
 
-      <div class="col-xs-12 col-sm-6 col-md-4 "
-        <div class="card">
-         <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
-         </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+    <div class="card">
+     <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
+     </div>
 
-         <div class="card-block">
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
+     <div class="card-block">
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
 
-          <div class="card-description">
-            <h2><%= destination.name %></h2>
-            <p><%= destination.planet_type %></p>
-          </div>
-            <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
-
-          </div>
-         </div>
-         <% end %>
-
-
-          <!-- correct -->
-
-        </div>
+      <div class="card-description">
+        <h2><%= destination.name %></h2>
+        <p><%= destination.planet_type %></p>
       </div>
+      <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
+
     </div>
-
-
+  </div>
+  <% end %>
 </div>
 </div>
+
+<!-- correct -->
+
+
+
+
 
