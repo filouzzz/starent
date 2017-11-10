@@ -74,6 +74,28 @@ background-position: center;
   padding: 7px;
   text-decoration: none;
 }
+
+.rounded-black{
+  background-color: black;
+  border-color: black;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.rounded-black:hover{
+  background-color: #6d6d6d;
+  border-color: #6d6d6d;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
 .rounded-red:hover {
 
   border-color: #f7a6ae;
