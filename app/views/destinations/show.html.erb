@@ -6,21 +6,21 @@
       <div class="col-md-6">
         <div class="descrshowdest" >
           <h3><%= @destination.name%></h3>
-          <h4> <%= @destination.planet_type %></h4>
+          <p> <%= @destination.planet_type %></p>
           <p><%= @destination.description %></p>
           <p><%= @destination.landscape_type %></p>
           <ul>
-            <li><h3>Price: <%= @destination.price %></h3></li>
-            <li><h3>weather description :<%= @destination.weather%></h3></li>
+            <li><p>Price: <%= @destination.price %></p></li>
+            <li><p>weather description :<%= @destination.weather%></p></li>
           </ul>
         </div>
         </div>
        <div class="col-md-6">
+          <div class="BtnShowRight">
+          <%= link_to 'Back', destinations_path, class: "btn rounded-black"%>
 
-          <%= link_to 'Back', destinations_path, class: "btn btn-primary"%>
 
-
-          <%= link_to 'Book', new_destination_booking_path(@destination), class: "btn btn-primary"%>
+          <%= link_to 'Book', new_destination_booking_path(@destination), class: "btn rounded-red"%>
 
         <% if @destination.user == current_user %>
         <p>
@@ -28,7 +28,7 @@
         </p>
         <% else %>
         <% end %>
-
+        </div>
     </div>
   </div>
 
