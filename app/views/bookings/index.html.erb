@@ -1,105 +1,9 @@
-<style>
-  .product {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-radius: 3px;
-  transition: all 0.15s ease;
-}
-
-/* Body design */
-.product-body {
-  flex: 1 1 auto;
-}
-.product-body h3 {
-  font-weight: bold;
-  font-size: 23px;
-  margin-top: 0;
-}
-.product-body p {
-  font-weight: lighter;
-  color: #999999;
-  margin-bottom: 0;
-}
-
-/* Product image */
-.product-image {
-  border-radius: 10px;
-  margin-right: 20px;
-  width: 175px;
-}
-
-/* Upvote design */
-.product-upvote {
-  padding-right: 20px;
-  text-align: center;
-  transition: all 0.15s ease;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 20px;
-}
-.product-count {
-  margin: 2px 0 0;
-}
-.product-arrow {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
-  border-radius: 2px;
-  margin: auto;
-}
-
-/* Controls design */
-.product-controls {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0px;
-}
-.product-controls a {
-  padding: 0 20px;
-  font-size: 17px;
-  color: #E6E6E6;
-}
-.product-controls a:hover {
-  color: #D3473C !important
-}
-.product-controls-hidden a {
-  color: transparent;
-  font-size: 15px;
-  transition: all 0.15s ease;
-  border-color: transparent;
-}
-
-/* Hover effects */
-.product:hover {
-  background: #f7f7fa;
-  cursor: pointer;
-}
-.product-upvote:hover, .product-upvote.product-upvote-upvoted {
-  color: #5898f1;
-  cursor: pointer;
-}
-.product-upvote-upvoted .product-arrow {
-  border-bottom-color: #5898f1;
-}
-// .product:hover .product-upvote {
-//   transform: scale(1.2)
-// }
-.product:hover .product-controls-hidden a {
-  color: #E6E6E6;
-}
-.product-upvote:hover .product-arrow {
-  border-bottom: 9px solid #5898f1;
-}
-</style>
 <div class="container">
-  <div class="title-front text-center">
-    <h3>This is your booked Destinations <br>all over the universe</h3>
+  <div class="title-front-dash">
+    <br>
+    <p>This is your booked Destinations <br>all over the universe</p>
+
+    <hr>
   </div>
   <div class="row">
     <% @bookings.each do |booking| %>
@@ -109,8 +13,12 @@
 
         </div>
          <div class="product-body">
-          <img class="card-user-dash" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
 
+            <% if   current_user.avatar.nil? %>
+        <%= image_tag "rocket.png", class: "avatar card-user-dash", id: "logo" %>
+        <% else %>
+        <%= cl_image_tag current_user.avatar.path, class: "avatar card-user-dash" %>
+        <% end %>
           <div class="">
             <h3><%= booking.destination.name %></h3>
             <p><%= booking.destination.planet_type %></p>
@@ -129,29 +37,32 @@
 <!-- correct -->
 
 
-
+<hr>
 
 
 
 
 <div class="container ">
-  <div class=" title-front text-center">
-    <h2>This is your Destinations all over the universe</h2>
+  <div class=" title-front-dash">
+
+    <p>This is your Destinations <br>all over the universe</p>
+
+    <hr>
   </div>
   <div class="row">
 
 
     <% @created_destination.each do |destination| %>
 
-    <div class="col-xs-12 col-sm-6 col-md-4 ">
-    <div class="card">
-     <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="product">
+     <div class="card-img product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
      </div>
 
-     <div class="card-block">
+     <div class="product-body">
       <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
 
-      <div class="card-description">
+      <div class="card-user-dash">
         <h2><%= destination.name %></h2>
         <p><%= destination.planet_type %></p>
       </div>
