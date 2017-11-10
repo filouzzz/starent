@@ -1,15 +1,28 @@
 
-<div class = "container">
-<div class="card margin-bottom-10" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path @destination.photo %>);">
-<h1 class="text-center"><%= @destination.name%></h1><h4 class="text-center"> a <%= @destination.planet_type %></h4>
-<h2 class="text-center"><%= @destination.description %></h2>
-<h2 class= "text-center"><%= @destination.landscape_type %></h2>
-<ul>
-  <li><h3 class="text-center">Price: <%= @destination.price %></h3></li>
-  <li><h3 class="text-center">weather description :<%= @destination.weather%></h3></li>
-</ul>
+<div class="bgshowdest" style="width:100%; height: 400px; background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path @destination.photo %>);">
 </div>
-<%= render 'form' %>
+  <div class="row">
 
-</div>
+    <div class="col-md-6">
+      <div class="descrshowdest" >
+          <h3><%= @destination.name%></h3>
+          <p> <%= @destination.planet_type %></p>
+          <p><%= @destination.description %></p>
+          <p><%= @destination.landscape_type %></p>
+          <ul class="text-deco-none">
+            <li><p>Price: <%= @destination.price %></p></li>
+            <li><p>weather description :<%= @destination.weather%></p></li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="BtnShowRight">
+          <%= render 'form' %>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
 
