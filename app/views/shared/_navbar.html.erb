@@ -7,12 +7,16 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
-    <a class="navbar-wagon-item navbar-wagon-link">
+
+    <%= link_to "All destinations",'/destinations', class:"navbar-wagon-item navbar-wagon-link" %>
+
+    <%= link_to "Available destinations",'/desinations/display_unbooked_destinations', class:"navbar-wagon-item navbar-wagon-link" %>
+
+
       <% if current_user %>
-      <%= link_to "Welcome #{current_user.first_name}", bookings_index_path %>
+
+      <%= link_to "#{current_user.first_name} dashboard", bookings_index_path, class:"navbar-wagon-item navbar-wagon-link"%>
+
       <% end %>
     </a>
 

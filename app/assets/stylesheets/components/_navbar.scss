@@ -8,6 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position:relative;
+  width:100%;
+  z-index: 900;
 }
 
 /* Logo */
@@ -37,6 +40,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
+  padding:10px;
   color: #616668;
   font-size: 14px;
 }

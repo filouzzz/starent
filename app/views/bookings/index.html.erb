@@ -1,80 +1,107 @@
+<div class="container">
+  <div class="title-front-dash">
+    <br>
+    <p>This is your booked Destinations <br>all over the universe</p>
 
+<
 <div class="container ">
+  <% if @bookings.empty? %>
+  <div class=" title-front text-center">
+    <h2>No Booking</h2>
+  </div>
+  <% else %>
   <div class=" title-front text-center">
     <h2>This is your booked Destinations all over the universe</h2>
   </div>
   <div class="row">
-
-
-      <% @bookings.each do |booking| %>
-
-      <div class="col-xs-12 col-sm-6 col-md-4 "
-        <div class="card">
-         <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path booking.destination.photo %>);">
-
-
-         <div class="card-block">
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
-
-          <div class="card-description">
-            <h2><%= booking.destination.name %></h2>
-            <p><%= booking.destination.planet_type %></p>
-          </div>
-          <div>
-            <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
-            </div>
-            </div>
-          </div>
-         </div>
-         <% end %>
-
-
-          <!-- correct -->
+    <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-12 col-md-12 ">
+      <div class="product">
+       <div class="card-img product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path booking.destination.photo %>);">
 
         </div>
+         <div class="product-body">
+
+            <% if   current_user.avatar.nil? %>
+        <%= image_tag "rocket.png", class: "avatar card-user-dash", id: "logo" %>
+        <% else %>
+        <%= cl_image_tag current_user.avatar.path, class: "avatar card-user-dash" %>
+        <% end %>
+          <div class="">
+            <h3><%= booking.destination.name %></h3>
+
+            <p><%= booking.destination.planet_type %></p>
+            <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
+
+            <%= link_to 'Delete Booking', destination_booking_path(booking.destination, booking),method: :delete, class: "btn btn-primary" %>
+
+          </div>
+         </div>
       </div>
     </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
 
 
-</div>
-</div>
+
+
+
 
 
 <div class="container ">
-  <div class=" title-front text-center">
-    <h2>This is your Destinations all over the universe</h2>
+
+  <% if @created_destination.any? %>
+ <div class=" title-front-dash">
+
+    <p>This is your Destinations <br>all over the universe</p>
+
+    <hr>
+
   </div>
   <div class="row">
 
 
-      <% @created_destination.each do |destination| %>
-
-      <div class="col-xs-12 col-sm-6 col-md-4 "
-        <div class="card">
-         <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
-         </div>
-
-         <div class="card-block">
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
-
-          <div class="card-description">
-            <h2><%= destination.name %></h2>
-            <p><%= destination.planet_type %></p>
-          </div>
-            <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
-
-          </div>
-         </div>
-         <% end %>
+    <% @created_destination.each do |destination| %>
 
 
-          <!-- correct -->
+   <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="product">
+     <div class="card-img product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
+     </div>
 
-        </div>
+     <div class="product-body">
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
+
+      <div class="card-user-dash">
+        <h2><%= destination.name %></h2>
+        <p><%= destination.planet_type %></p>
       </div>
+      <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
+      <%= link_to 'Edit Destination', edit_destination_path(@destination), class: "btn btn-primary" %>
+
     </div>
+  <% end %>
+</div>
+</div>
+
+
+
 
 
 </div>
 </div>
+
+</div>
+
+
+</div>
+<% else %>
+<div class=" title-front text-center">
+  <h2>No Created destination</h2>
+  <% end %>
+</div>
+</div>
+
 
