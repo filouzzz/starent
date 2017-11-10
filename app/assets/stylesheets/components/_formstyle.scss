@@ -75,6 +75,15 @@ background-position: center;
   text-decoration: none;
 }
 
+.rounded-red-dest{
+  background-color: #ff7885;
+  border-color: #ff7885;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  padding: 7px;
+  text-decoration: none;
+}
 .rounded-black{
   background-color: black;
   border-color: black;
@@ -82,6 +91,15 @@ background-position: center;
   color: white;
   font-size: 15px;
   margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+.rounded-black-dest{
+  background-color: black;
+  border-color: black;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
   padding: 7px;
   text-decoration: none;
 }
