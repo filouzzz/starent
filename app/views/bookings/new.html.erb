@@ -1,6 +1,8 @@
 
-<div class="bgshowdest" style="width:100%; height: 400px; background-size: cover;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path @destination.photo %>);">
-</div>
+<div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= @destination.seed_photo ? (image_path @destination.seed_photo) : (cl_image_path @destination.photo.path) %> );">
+         </div>
+
   <div class="row">
 
     <div class="col-md-6">

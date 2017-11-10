@@ -1,5 +1,6 @@
 <div class="container">
   <div class="title-front-dash">
+<<<<<<< HEAD
 
 
 
@@ -8,6 +9,9 @@
 
 <div class="container ">
    <% if @bookings.empty? %>
+=======
+      <% if @bookings.empty? %>
+>>>>>>> c7006ddb893650e1c3a5ffc0a433d4f846cf8079
       <div class="  text-center">
         <br>
     <p>no <br>booking</p>
@@ -22,9 +26,9 @@
         <% @bookings.each do |booking| %>
         <div class="col-xs-12 col-sm-12 col-md-12 ">
           <div class="product">
-           <div class="card-img product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path booking.destination.photo %>);">
-
-           </div>
+           <div class="card-img product-image " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= booking.destination.seed_photo ? (image_path booking.destination.seed_photo) : (cl_image_path booking.destination.photo.path) %> );">
+          </div>
 
            <div class="product-body">
 
@@ -42,7 +46,10 @@
               <%= link_to 'Delete Booking', destination_booking_path(booking.destination, booking),method: :delete, class: "btn rounded-black" %>
 
             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> c7006ddb893650e1c3a5ffc0a433d4f846cf8079
           </div>
         </div>
       </div>
@@ -54,7 +61,10 @@
 
 <hr>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c7006ddb893650e1c3a5ffc0a433d4f846cf8079
   <div class="container ">
     <div class="title-front-dash">
       <% if @created_destination.any? %>
@@ -70,12 +80,16 @@
   <% end %>
    </div>
     <div class="row">
+<<<<<<< HEAD
 
+=======
+>>>>>>> c7006ddb893650e1c3a5ffc0a433d4f846cf8079
 
 
       <% @created_destination.each do |destination| %>
 
 
+<<<<<<< HEAD
 
 <div class="container ">
 
@@ -130,18 +144,29 @@
          <div class="product-body">
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
 
+=======
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="product">
+         <div class="card-img product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= destination.seed_photo ? (image_path destination.seed_photo) : (cl_image_path destination.photo.path) %> );">
+          </div>
+
+         <div class="product-body">
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/filouzzz">
+>>>>>>> c7006ddb893650e1c3a5ffc0a433d4f846cf8079
 
           <div class="card-user-dash">
             <h2><%= destination.name %></h2>
             <p><%= destination.planet_type %></p>
           </div>
-          <p> booked from <%= booking.start_date %> to <%= booking.end_date %></p>
-          <%= link_to 'Edit Destination', edit_destination_path(@destination), class: "btn rounded-black" %>
+
+          <%= link_to 'Edit Destination', edit_destination_path(destination), class: "btn rounded-black" %>
 
         </div>
         <% end %>
       </div>
     </div>
+<<<<<<< HEAD
 
   <% end %>
 </div>
@@ -166,6 +191,8 @@
 
 </div>
 
+=======
+>>>>>>> c7006ddb893650e1c3a5ffc0a433d4f846cf8079
   </div>
 </div>
 
