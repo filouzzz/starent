@@ -1,26 +1,32 @@
-<div class="container text-center">
+<div class="form-singup form-spacing">
+ <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-4">
-      <div class="form-inputs" >
-        <h2>Sign up</h2>
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+      <div class="form-inputs text-center" >
+        <h2 class="new-header-page">Sign up</h2>
         <%= simple_form_for @user, url: user_registration_path do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs" style="padding-left:15%; text-align:left;">
-          <%= f.input :first_name, :label => 'Your first_name please', required: true, autofocus: true %>
-          <%= f.input :last_name, :label => 'Your last_name please', required: true, autofocus: true %>
-          <%= f.input :avatar, as: :attachinary %>
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, :hint => 'No special characters.', required: true %>
-          <%= f.input :password_confirmation, required: true %>
+        <div class="form-inputs" >
+          <%= f.input :first_name,label: false, placeholder: 'Your first name please', required: true, autofocus: true %>
+          <%= f.input :last_name,label: false, placeholder: 'Your last name please', required: true, autofocus: true %>
+          <div class="panel panel-default imgupload">
+            <div class="panel-body">
+              <%= f.input :avatar,label: false, as: :attachinary %>
+            </div>
+          </div>
+
+          <%= f.input :email, placeholder: 'email@mail.com', label: false, required: true, autofocus: true %>
+          <%= f.input :password, :hint => 'No special characters.', placeholder: '****** please', label: false, required: true %>
+          <%= f.input :password_confirmation, placeholder: '****** ', label: false, required: true %>
         </div>
-        <div class="form-actions" style="padding-left:15%; padding-top:5%; text-align:left;">
-          <%= f.button :submit, "Register" %>
-          <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "welcome", class: "rounded-white" %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
+</div>
 
