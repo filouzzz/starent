@@ -1,5 +1,5 @@
 class Destination < ApplicationRecord
-  # has_attachment :photo
+  has_attachment :photo
   belongs_to :user
   has_many :bookings
   validates :name, uniqueness: true, presence: true

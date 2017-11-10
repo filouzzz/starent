@@ -11,7 +11,8 @@
       <div class="col-xs-12 col-sm-6 col-md-4 ">
        <%= link_to destination_path(destination), class:" link-cards" do %>
         <div class="card">
-         <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path destination.photo %>);">
+         <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= destination.seed_photo ? (image_path destination.seed_photo) : (cl_image_path destination.photo.path) %> );">
          </div>
 
          <div class="card-block">

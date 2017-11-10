@@ -13,7 +13,7 @@
         <%= f.input :weather, placeholder: 'weather', label: false %>
         <%= f.input :distance, placeholder: 'disatnce', label: false %>
         <div class="file-upload-new-dest text-center">
-        <%= f.file_field :photo, label: false %>
+        <%= f.input :photo, as: :attachinary %>
         </div>
         <%= f.input :description, placeholder: 'description', label: false %>
         <%= f.submit "new space", class: "btn btn-primary rounded-white" %>
