@@ -19,8 +19,12 @@
           <div class="BtnShowRight">
           <%= link_to 'Back', destinations_path, class: "btn rounded-black"%>
 
-
+          <% if current_user %>
           <%= link_to 'Book', new_destination_booking_path(@destination), class: "btn rounded-red"%>
+          <% else %>
+          <%= link_to 'Log in', new_user_session_path, class: "btn rounded-red"%>
+          <% end %>
+
 
         <% if @destination.user == current_user %>
         <p>
