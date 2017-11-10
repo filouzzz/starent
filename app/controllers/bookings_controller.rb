@@ -27,7 +27,13 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+
+    @destination.booked = !@destination.booked
+    @destination.save
     @booking.destroy
+
+
+    redirect_to bookings_index_path
   end
 
   def index

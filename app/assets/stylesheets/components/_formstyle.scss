@@ -63,12 +63,60 @@ background-position: center;
   font-size: 15px;
   margin-bottom: 10px;
 }
+.rounded-white-search{
+  background-color: #f5f5f5;
+  border-color: #f5f5f5;
+  border-radius: 20px;
+  color: black!important;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
 
 .rounded-red {
   background-color: #ff7885;
   border-color: #ff7885;
   border-radius: 20px;
   color: black;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.rounded-red-dest{
+  background-color: #ff7885;
+  border-color: #ff7885;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  padding: 7px;
+  text-decoration: none;
+}
+.rounded-black{
+  background-color: black;
+  border-color: black;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 10px;
+  padding: 7px;
+  text-decoration: none;
+}
+.rounded-black-dest{
+  background-color: black;
+  border-color: black;
+  border-radius: 20px;
+  color: white;
+  font-size: 15px;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.rounded-black:hover{
+  background-color: #6d6d6d;
+  border-color: #6d6d6d;
+  border-radius: 20px;
+  color: white;
   font-size: 15px;
   margin-bottom: 10px;
   padding: 7px;
@@ -162,4 +210,21 @@ a.rounded-password{
   background-color: rgb(255, 120, 133);
       border-radius: 40px;
       border: 0px solid transparent;
+}
+
+.searchsize{
+height: 100px;
+color: black;
+padding:10px;
+width: 100%;
+//background:#a5a4a4;
+background-image:url("https://media.giphy.com/media/l0He3o8pL9AebplFm/giphy.gif");
+background-size:cover;
+background-position: center;
+
+}
+
+input.form-control {
+    max-width: 400px;
+    min-width: 200px;
 }

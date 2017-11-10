@@ -12,10 +12,7 @@
         <%= f.input :price,placeholder: @destination.price, class: "color-white-form", label: false %>
         <%= f.input :weather, placeholder: @destination.weather, label: false %>
         <%= f.input :distance, placeholder: @destination.distance, label: false %>
-        <!-- <div class="file-upload-new-dest text-center">
-        <%= f.file_field :photo, label: false %>
-            <% #if file_field? do %>
-        </div> -->
+        <%= f.input :photo, as: :attachinary %>
         <%= f.input :description, placeholder: @destination.description, label: false %>
         <%= f.submit "Confirm update", class: "btn btn-primary rounded-white" %>
         <% end %>

@@ -21,6 +21,7 @@ display: flex;
 min-height: 175px;
 width: 100%;
     display: block;
+    background-size: cover;
 }
 .card-block{
 flex: 1 1 auto;
@@ -37,6 +38,22 @@ flex: 1 1 auto;
   // display: flex;
   // justify-content: space-between;
   // align-items: center;
+}
+
+.card-user-dash{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+      right: 50px;
+    top: 20px;
+}
+.title-front-dash{
+  font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    text-align: center;
 }
 .card-category {
   position: absolute;

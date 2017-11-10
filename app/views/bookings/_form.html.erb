@@ -1,8 +1,8 @@
 
 <%= simple_form_for [@user, @destination, @booking] do |m| %>
-<%= m.input :start_date %>
-<%= m.input :end_date %>
-<%= m.submit "Confirm Booking" %>
+<%= m.input :start_date %> <br>
+<%= m.input :end_date %> <br>
+<%= m.submit "Confirm Booking", class: "rounded-red" %>
 <% end %>
 
 
