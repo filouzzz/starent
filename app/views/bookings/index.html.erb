@@ -15,7 +15,7 @@
         <% @bookings.each do |booking| %>
         <div class="col-xs-12 col-sm-12 col-md-12 ">
           <div class="product">
-           <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           <div class="card-img product-image " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url(<%= booking.destination.seed_photo ? (image_path booking.destination.seed_photo) : (cl_image_path booking.destination.photo.path) %> );">
           </div>
 
@@ -68,7 +68,7 @@
 
       <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="product">
-         <div class="card-img " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         <div class="card-img product-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url(<%= destination.seed_photo ? (image_path destination.seed_photo) : (cl_image_path destination.photo.path) %> );">
           </div>
 
