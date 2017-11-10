@@ -20,7 +20,9 @@
           <%= link_to 'Back', destinations_path, class: "btn rounded-black"%>
 
           <% if current_user %>
-          <%= link_to 'Book', new_destination_booking_path(@destination), class: "btn rounded-red"%>
+            <% if @destination.booked == false %>
+            <%= link_to 'Book', new_destination_booking_path(@destination), class: "btn rounded-red"%>
+            <% end %>
           <% else %>
           <%= link_to 'Log in', new_user_session_path, class: "btn rounded-red"%>
           <% end %>
@@ -28,7 +30,7 @@
 
         <% if @destination.user == current_user %>
         <p>
-          <%= likt_to 'Update destination', edit_destination_path(@destination), class: "btn btn-primary"  %>
+          <%= link_to 'Update destination', edit_destination_path(@destination), class: "btn btn-primary"  %>
         </p>
         <% else %>
         <% end %>
