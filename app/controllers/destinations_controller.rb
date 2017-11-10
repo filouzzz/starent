@@ -63,7 +63,7 @@ def update
     @destination = Destination.find(params[:id])
   end
   def destination_params
-    params.require(:destination).permit(:name, :price, :description, :planet_type, :weather, :photo, :distance)
+    params.require(:destination).permit(:name, :price, :description, :planet_type, :weather, :distance, :photo)
   end
 end
 
