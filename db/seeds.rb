@@ -11,7 +11,7 @@ Destination.destroy_all
 
 User.destroy_all
 puts "Adding 10 user"
-avatar_to_randomize = ["https://kitt.lewagon.com/placeholder/users/filouzzz", "https://kitt.lewagon.com/placeholder/users/faninos", "https://kitt.lewagon.com/placeholder/users/remidatroa", "https://kitt.lewagon.com/placeholder/users/jerboulade"]
+avatar_to_randomize = ["https://kitt.lewagon.com/placeholder/users/quiko", "https://kitt.lewagon.com/placeholder/users/filouzzz", "https://kitt.lewagon.com/placeholder/users/faninos", "https://kitt.lewagon.com/placeholder/users/remidatroa", "https://kitt.lewagon.com/placeholder/users/jerboulade"]
 10.times do
   pass =  Faker::Internet.password(10, 20)
   user = User.new( email: Faker::Internet.email, password: pass, encrypted_password: pass, photo: avatar_to_randomize.sample )
